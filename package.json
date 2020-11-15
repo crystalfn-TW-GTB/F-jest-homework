@@ -42,6 +42,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
+    "@types/jest": "^26.0.15",
     "axios": "^0.19.2"
   }
 }
