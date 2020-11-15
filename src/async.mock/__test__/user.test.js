@@ -12,12 +12,14 @@ describe("register", () => {
     const response = {};
     const data = { data: response };
     axios.post.mockResolvedValue(data);
-    await expect(register()).resolves.toBe(response);
+    const result = register("userName", "userPassword");
+    await expect(result).resolves.toBe(response);
   });
 
   test("should reject with Error when username is invalid", async () => {
     // TODO 20: add test here
     verifyUsername.mockImplementation(() => false);
-    await expect(register()).rejects.toThrow("wrong username or password");
+    const result = register("userName", "userPassword");
+    await expect(result).rejects.toThrow("wrong username or password");
   });
 });
